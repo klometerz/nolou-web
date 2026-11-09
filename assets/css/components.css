@@ -94,7 +94,7 @@
 
 .logo__img {
   width: 134px;
-  height: 28px;
+  height: auto;
 }
 
 .logo__img--dark {
@@ -331,32 +331,18 @@
   color: var(--color-white);
   background-color: var(--color-ocean-blue);
   background-image:
-    radial-gradient(
-      circle at 84% 14%,
-      color-mix(in srgb, var(--color-white) 18%, transparent) 0,
-      transparent 42%
+    linear-gradient(
+      100deg,
+      color-mix(in srgb, var(--color-ocean-blue) 94%, transparent) 0%,
+      color-mix(in srgb, var(--color-ocean-blue) 86%, transparent) 46%,
+      color-mix(in srgb, var(--color-primary-blue) 58%, transparent) 100%
     ),
-    radial-gradient(
-      circle at 12% 88%,
-      color-mix(in srgb, var(--color-primary-blue) 48%, transparent) 0,
-      transparent 48%
-    ),
-    linear-gradient(135deg, var(--color-ocean-blue) 0%, var(--color-primary-blue) 100%);
+    url("../img/hero-bg.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   padding-top: calc(var(--nav-height-mobile) + clamp(3rem, 8vw, 6rem));
   padding-bottom: clamp(4rem, 10vw, 8rem);
-}
-
-.hero__pattern {
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  background-image: url("../img/pattern.svg");
-  background-repeat: repeat;
-  background-size: 320px 320px;
-  opacity: 0.16;
-  -webkit-mask-image: linear-gradient(100deg, transparent 0 30%, black 100%);
-  mask-image: linear-gradient(100deg, transparent 0 30%, black 100%);
-  pointer-events: none;
 }
 
 .hero__inner {
@@ -456,6 +442,7 @@
 .hero__bottle {
   width: min(46%, 15rem);
   height: auto;
+  border-radius: var(--radius-xl);
   filter: drop-shadow(0 30px 36px color-mix(in srgb, var(--color-dark) 28%, transparent));
   animation: bottle-float 6s ease-in-out infinite;
 }
@@ -473,26 +460,6 @@
   margin-left: -1.25rem;
   transform: rotate(4deg);
   animation-delay: -3s;
-}
-
-.hero__droplet {
-  position: absolute;
-  width: clamp(2rem, 5vw, 3.25rem);
-  height: auto;
-  opacity: 0.9;
-  animation: droplet-float 7s ease-in-out infinite;
-}
-
-.hero__droplet--one {
-  top: 14%;
-  right: 8%;
-}
-
-.hero__droplet--two {
-  top: 40%;
-  left: 2%;
-  width: clamp(1.25rem, 3vw, 2rem);
-  animation-delay: -3.5s;
 }
 
 .hero__badge {
@@ -530,18 +497,6 @@
   }
   50% {
     translate: 0 -0.75rem;
-  }
-}
-
-@keyframes droplet-float {
-  0%,
-  100% {
-    translate: 0 0;
-    opacity: 0.9;
-  }
-  50% {
-    translate: 0 -0.5rem;
-    opacity: 0.65;
   }
 }
 
@@ -679,6 +634,7 @@
 .product-card__image {
   width: min(100%, 17rem);
   height: auto;
+  border-radius: var(--radius-xl);
   filter: drop-shadow(0 24px 34px color-mix(in srgb, var(--color-dark) 18%, transparent));
   transition: transform var(--duration-slow) var(--ease-out);
 }
@@ -807,6 +763,19 @@
 /* ============================================================
    Ingredients
    ============================================================ */
+.ingredients::before {
+  background-image:
+    linear-gradient(
+      color-mix(in srgb, var(--color-blue-tint) 86%, transparent),
+      color-mix(in srgb, var(--color-blue-tint) 86%, transparent)
+    ),
+    url("../img/kandungan-bg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  opacity: 1;
+}
+
 .ingredients__grid {
   display: grid;
   gap: var(--space-3);
@@ -899,8 +868,18 @@
    About
    ============================================================ */
 .about::before {
-  -webkit-mask-image: linear-gradient(90deg, black 0%, black 26%, transparent 54%);
-  mask-image: linear-gradient(90deg, black 0%, black 26%, transparent 54%);
+  background-image:
+    linear-gradient(
+      color-mix(in srgb, var(--color-dark) 84%, transparent),
+      color-mix(in srgb, var(--color-dark) 84%, transparent)
+    ),
+    url("../img/tentang-bg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  opacity: 1;
+  -webkit-mask-image: none;
+  mask-image: none;
 }
 
 .about__inner {

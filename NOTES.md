@@ -18,6 +18,9 @@ Dokumen ini mencatat asumsi, keputusan desain, dan placeholder yang masih perlu 
 nolou-web/
 ├── index.html
 ├── TODO.md
+├── TODO2.md
+├── TODO3.md
+├── PRODUCT-KNOWLEDGE.md
 ├── NOTES.md
 ├── robots.txt
 ├── sitemap.xml
@@ -31,18 +34,21 @@ nolou-web/
     │   └── main.js
     └── img/
         ├── logo/
-        │   ├── nolou-logo-blue.svg
-        │   ├── nolou-logo-black.svg
-        │   ├── nolou-logo-white.svg
-        │   └── nolou-monogram-blue.svg
+        │   ├── nolou-logo-blue.png
+        │   ├── nolou-logo-black.png
+        │   ├── nolou-logo-white.png
+        │   └── nolou-icon-blue.png
         ├── product/
-        │   ├── hydrating-serum.svg
-        │   └── exfoliating-serum.svg
+        │   ├── hydrating-serum.jpg
+        │   └── exfoliating-serum.jpg
         ├── icons/
         │   ├── icon-hyaluronic.svg
         │   ├── icon-panthenol.svg
         │   ├── icon-glycolic.svg
         │   └── icon-arginine.svg
+        ├── hero-bg.jpg
+        ├── kandungan-bg.jpg
+        ├── tentang-bg.jpg
         ├── pattern.svg
         ├── pattern-blue.svg
         ├── droplet.svg
@@ -69,9 +75,10 @@ nolou-web/
 - Spacing kelipatan 8px, grid rapi, whitespace lega, headline tebal.
 
 ### 2.3 Logo & clear space
-- Logo masih **placeholder SVG** berbasis teks Montserrat + monogram N geometris.
-- **TODO: replace logo dengan file resmi dari owner.**
-- Varian yang tersedia: biru, hitam, putih, dan monogram biru. Tidak ada varian warna aksen lama.
+- Logo resmi sudah dipakai dari folder `assets/img/logo-real/` (wordmark NOLOU horizontal di kanvas persegi).
+- Aset dirapikan otomatis: crop ke area wordmark lalu background dibuat transparan (anti-aliasing dihitung dari luminance). Varian: biru, hitam, dan putih.
+- **Catatan:** berkas sumber hanya berisi wordmark; varian monogram lama (`nolou-monogram-blue.svg`) masih disimpan sebagai placeholder favicon.
+- Varian yang tersedia: biru, hitam, putih, dan ikon kotak biru (`nolou-icon-blue.png` untuk apple-touch-icon).
 - `--logo-clear-space` = 9 × tinggi monogram (20px) = 180px.
 - **Kompromi navbar & favicon:** aturan clear space 9× tidak diterapkan penuh karena ruang terbatas. Logo diberi jarak maksimal dari menu/ornamen dan tidak ada elemen menempel. Keputusan ini perlu dikonfirmasi owner.
 - **Logo putih di atas hero biru:** guideline belum mengatur latar biru secara eksplisit. Dipilih logo putih utuh agar kontras; perlu konfirmasi owner.
@@ -88,11 +95,12 @@ nolou-web/
 - Mobile menu memakai `aria-expanded`, `aria-controls`, bisa ditutup dengan Esc dan klik link.
 
 ### 2.5 Art direction skincare
-- Hero biru dengan gradient ocean → primary, pattern molekul/heksagon tipis, glyph tetesan dan ripple air.
-- Visual hero menampilkan dua botol dropper placeholder dengan bentuk label berbeda: Hydrating = label persegi, Exfoliating = label kapsul membulat.
-- Section Kandungan memakai latar `--color-blue-tint` + pattern molekul biru, berisi 4 kartu kandungan dengan ikon heksagon/molekul/tetes.
-- Motion halus: float botol, droplet, ripple, dan reveal-on-scroll.
-- Placeholder produk memakai palet biru saja (primary/ocean) + kaca/highlight lembut.
+- Hero memakai foto `FEEDS NOLOU (7).png` sebagai background (dioptimasi ke `assets/img/hero-bg.jpg`) dengan overlay gradient ocean → primary agar teks tetap kontras. SVG pattern dan droplet air dihapus.
+- Visual hero menampilkan foto produk asli Hydrating dan Exfoliating Serum.
+- Section Kandungan memakai foto `1105(25).png` (dioptimasi ke `assets/img/kandungan-bg.jpg`) + overlay `--color-blue-tint`, berisi 4 kartu kandungan dengan ikon heksagon/molekul/tetes.
+- Section Tentang memakai foto `9.png` (dioptimasi ke `assets/img/tentang-bg.jpg`) + overlay `--color-dark`.
+- Motion halus: float botol, ripple, dan reveal-on-scroll.
+- Wording produk mengikuti `PRODUCT-KNOWLEDGE.md` (hanya fakta ✅; pengetahuan bahan 🟡 diberi komentar konfirmasi; data ❓ tidak dikarang).
 
 ---
 
@@ -100,16 +108,19 @@ nolou-web/
 
 | Item | Lokasi | Status / Todo |
 |---|---|---|
-| Logo resmi | `assets/img/logo/*` | Placeholder SVG. **TODO: replace logo dengan file resmi dari owner.** |
-| Foto produk Hydrating | `assets/img/product/hydrating-serum.svg` | Placeholder botol dropper. **TODO: replace dengan foto produk resmi.** |
-| Foto produk Exfoliating | `assets/img/product/exfoliating-serum.svg` | Placeholder botol dropper. **TODO: replace dengan foto produk resmi.** |
+| Logo resmi | `assets/img/logo/*.png` | Sudah memakai wordmark resmi dari `logo-real/` (crop + background transparan). |
+| Foto produk Hydrating | `assets/img/product/hydrating-serum.jpg` | Sudah memakai foto asli dari `product-real/8.png` (dioptimasi 1200×1200). |
+| Foto produk Exfoliating | `assets/img/product/exfoliating-serum.jpg` | Sudah memakai foto asli dari `product-real/7.png` (dioptimasi 1200×1200). |
+| Background hero | `assets/img/hero-bg.jpg` | Dari `product-real/FEEDS NOLOU (7).png` (dioptimasi 1440×1800). |
+| Background Kandungan | `assets/img/kandungan-bg.jpg` | Dari `product-real/1105(25).png` (dioptimasi 788×1400). |
+| Background Tentang | `assets/img/tentang-bg.jpg` | Dari `product-real/9.png` (dioptimasi 1600×1600). |
 | Link belanja produk | `index.html` (CTA Produk) | `href="#"` + komentar `TODO: isi link toko`. Kanal penjualan belum ditentukan. |
 | Link belanja footer | `index.html` (footer) | `href="#"` + komentar `TODO: isi link toko`. |
 | Media sosial | `index.html` (footer) | `href="#"` placeholder Instagram/TikTok. **TODO: isi link resmi.** |
 | Email | footer | `hello@nolou.id` — asumsi, mohon konfirmasi. |
 | OG image | `assets/img/og-nolou.svg` | Placeholder SVG 1200×630. Sebaiknya diganti JPG/PNG karena sebagian platform sosial tidak mendukung SVG. |
-| Jawaban FAQ cara pakai | FAQ #4 | Jawaban umum, ditandai `<!-- COPY: konfirmasi ke owner -->`. |
-| Jawaban FAQ tempat beli | FAQ #5 | Menunggu kanal resmi, ditandai `<!-- COPY: konfirmasi ke owner -->`. |
+| Jawaban FAQ cara pakai | FAQ #4 | Placeholder `Cara pakai lengkap tertera pada kemasan.` + `<!-- COPY: isi dari owner -->` (data ❓ OWNER). |
+| Jawaban FAQ tempat beli | FAQ #5 | Menunggu kanal resmi, ditandai `<!-- COPY: isi dari owner -->`. |
 | Deskripsi kandungan | Section Kandungan | Deskripsi netral & umum, ditandai `<!-- COPY: konfirmasi ke owner -->`. |
 | Copy hero/produk/why/tentang/footer | `index.html` | Sebagian ditandai `<!-- COPY: edit me -->` untuk penyempurnaan owner. |
 | Sitemap | `sitemap.xml` | Baru berisi homepage; tambahkan URL lain jika ada. |
@@ -167,3 +178,22 @@ Tidak ada klaim medis tambahan, persentase kandungan, BPOM, halal, dermatologica
 - Hex hanya ada di `:root` (`tokens.css`) dan di dalam file SVG sebagai bagian dari aset brand; tidak ada hex hardcode di CSS komponen.
 - Tidak ada aset/konten dari browieofficial.com; hanya inspirasi struktur single-page.
 - Semua gambar produk memakai `loading="lazy"` kecuali visual hero; `width`/`height` diset untuk mengurangi layout shift.
+
+---
+
+## 8. Data produk yang masih harus diisi owner
+
+Mengacu ke bagian ❓ **OWNER TO FILL** di `PRODUCT-KNOWLEDGE.md` (Bagian 2 & 3):
+
+- Dasar/uji klaim "72 Jam Hydration".
+- Ukuran/volume kemasan (ml) kedua produk.
+- Daftar bahan lengkap (INCI) kedua produk.
+- Tekstur, aroma, dan rasa di kulit.
+- Jenis kulit yang cocok/tidak cocok; peringatan (kulit sensitif, hamil/menyusui, dll).
+- Cara pakai resmi (pagi/malam, jumlah tetes, urutan, frekuensi).
+- Konsentrasi/pH Glycolic Acid (jika boleh diungkap).
+- Kebiasaan pemakaian bersama bahan aktif lain menurut formulator.
+- Nomor notifikasi BPOM dan sertifikasi lain (halal, dll).
+- Masa simpan / PAO.
+- Harga dan link toko resmi.
+- Link media sosial resmi dan email resmi.
