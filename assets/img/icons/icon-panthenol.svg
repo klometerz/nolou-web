@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="iconPanthenolTitle">
+  <title id="iconPanthenolTitle">Ikon droplet Panthenol</title>
+  <g fill="none" stroke="#2A71CE" stroke-width="1.8" stroke-linejoin="round">
+    <path d="M32 8c0 0 19 21 19 34a19 19 0 0 1-38 0C13 29 32 8 32 8Z"/>
+    <path d="M22 42a10 10 0 0 0 10 10" stroke-linecap="round" opacity="0.7"/>
+  </g>
+  <circle cx="39" cy="34" r="3" fill="#0052CC"/>
+</svg>

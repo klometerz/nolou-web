@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="iconGlycolicTitle">
+  <title id="iconGlycolicTitle">Ikon heksagon Glycolic Acid</title>
+  <g fill="none" stroke="#0052CC" stroke-width="1.6" stroke-linejoin="round">
+    <path d="M32 8 50 19v22L32 52 14 41V19L32 8Z"/>
+    <path d="M32 20 41 26v12l-9 6-9-6V26l9-6Z" opacity="0.55"/>
+    <path d="M32 8v12M50 19l-9 7M50 41l-9-7M32 52V40M14 41l9-7M14 19l9 7" opacity="0.55"/>
+  </g>
+  <circle cx="32" cy="32" r="3.5" fill="#2A71CE"/>
+</svg>

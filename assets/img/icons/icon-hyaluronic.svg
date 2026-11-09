@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="iconHyaluronicTitle">
+  <title id="iconHyaluronicTitle">Ikon molekul Hyaluronic Acid</title>
+  <g fill="none" stroke="#2A71CE" stroke-width="1.6" stroke-linecap="round">
+    <path d="M16 20 32 12l16 8v18L32 46 16 38V20Z"/>
+    <path d="M32 12v34M16 20l32 18M48 20 16 38"/>
+    <circle cx="16" cy="20" r="4" fill="#2A71CE" stroke="none"/>
+    <circle cx="48" cy="20" r="4" fill="#2A71CE" stroke="none"/>
+    <circle cx="16" cy="38" r="4" fill="#2A71CE" stroke="none"/>
+    <circle cx="48" cy="38" r="4" fill="#2A71CE" stroke="none"/>
+    <circle cx="32" cy="12" r="4" fill="#0052CC" stroke="none"/>
+    <circle cx="32" cy="46" r="4" fill="#0052CC" stroke="none"/>
+  </g>
+</svg>

@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 640" role="img" aria-labelledby="hydratingVisualTitle">
+  <title id="hydratingVisualTitle">Placeholder visual Hydrating Serum NOLOU</title>
+  <defs>
+    <linearGradient id="hydratingLiquid" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#6AA4E6"/>
+      <stop offset="0.52" stop-color="#2A71CE"/>
+      <stop offset="1" stop-color="#17559F"/>
+    </linearGradient>
+    <linearGradient id="hydratingGlass" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#FFFFFF" stop-opacity="0.42"/>
+      <stop offset="0.38" stop-color="#FFFFFF" stop-opacity="0.05"/>
+      <stop offset="0.72" stop-color="#FFFFFF" stop-opacity="0.2"/>
+      <stop offset="1" stop-color="#FFFFFF" stop-opacity="0.02"/>
+    </linearGradient>
+    <linearGradient id="hydratingCap" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#3E4241"/>
+      <stop offset="1" stop-color="#2E302F"/>
+    </linearGradient>
+    <linearGradient id="hydratingDrop" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#8FBDF0"/>
+      <stop offset="1" stop-color="#2A71CE"/>
+    </linearGradient>
+  </defs>
+
+  <ellipse cx="240" cy="592" rx="122" ry="18" fill="#2A71CE" opacity="0.16"/>
+
+  <rect x="216" y="34" width="48" height="62" rx="24" fill="url(#hydratingCap)"/>
+  <rect x="214" y="92" width="52" height="28" rx="5" fill="#2E302F"/>
+  <rect x="234" y="118" width="12" height="58" rx="6" fill="#D8E7FA" opacity="0.9"/>
+
+  <rect x="210" y="150" width="60" height="34" rx="8" fill="#1D5AA8" opacity="0.85"/>
+  <rect x="140" y="176" width="200" height="396" rx="26" fill="url(#hydratingLiquid)"/>
+  <rect x="140" y="176" width="200" height="396" rx="26" fill="url(#hydratingGlass)"/>
+  <rect x="158" y="196" width="22" height="356" rx="11" fill="#FFFFFF" opacity="0.2"/>
+  <rect x="140" y="176" width="200" height="14" rx="7" fill="#FFFFFF" opacity="0.16"/>
+
+  <rect x="170" y="304" width="140" height="146" rx="6" fill="#FCF8F5"/>
+  <text x="240" y="346" text-anchor="middle" font-family="Montserrat, Arial, sans-serif" font-size="20" font-weight="700" letter-spacing="4" fill="#2E302F">NOLOU</text>
+  <rect x="204" y="362" width="72" height="2" fill="#2A71CE"/>
+  <text x="240" y="394" text-anchor="middle" font-family="Montserrat, Arial, sans-serif" font-size="12" font-weight="600" letter-spacing="2.4" fill="#2A71CE">HYDRATING</text>
+  <text x="240" y="414" text-anchor="middle" font-family="Montserrat, Arial, sans-serif" font-size="12" font-weight="600" letter-spacing="2.4" fill="#2A71CE">SERUM</text>
+  <text x="240" y="438" text-anchor="middle" font-family="Montserrat, Arial, sans-serif" font-size="8" font-weight="400" letter-spacing="1.4" fill="#2E302F" opacity="0.65">30 ML</text>
+
+  <path d="M392 470c0 18-14 30-30 30s-30-12-30-30c0-16 18-34 30-48 12 14 30 32 30 48Z" fill="url(#hydratingDrop)" opacity="0.9"/>
+  <circle cx="350" cy="474" r="7" fill="#FFFFFF" opacity="0.35"/>
+</svg>

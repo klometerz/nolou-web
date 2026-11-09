@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 160" role="img" aria-labelledby="dropletTitle">
+  <title id="dropletTitle">Tetesan serum</title>
+  <defs>
+    <linearGradient id="dropletFill" x1="0" y1="0" x2="0.4" y2="1">
+      <stop offset="0" stop-color="#FFFFFF" stop-opacity="0.92"/>
+      <stop offset="0.55" stop-color="#BFD8F8" stop-opacity="0.8"/>
+      <stop offset="1" stop-color="#7FAFEA" stop-opacity="0.72"/>
+    </linearGradient>
+  </defs>
+  <path d="M60 8c0 0 46 52 46 86a46 46 0 0 1-92 0C14 60 60 8 60 8Z" fill="url(#dropletFill)"/>
+  <ellipse cx="45" cy="86" rx="12" ry="18" fill="#FFFFFF" opacity="0.5" transform="rotate(-18 45 86)"/>
+</svg>

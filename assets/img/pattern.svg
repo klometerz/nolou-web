@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="160" height="160" viewBox="0 0 160 160" fill="none">
+  <defs>
+    <path id="hex" d="M0 -24 -20.78 -12 -20.78 12 0 24 20.78 12 20.78 -12Z"/>
+  </defs>
+  <g stroke="#FFFFFF" stroke-width="1" stroke-opacity="0.9">
+    <g>
+      <use href="#hex" x="0" y="0"/>
+      <use href="#hex" x="80" y="0"/>
+      <use href="#hex" x="160" y="0"/>
+      <use href="#hex" x="0" y="80"/>
+      <use href="#hex" x="80" y="80"/>
+      <use href="#hex" x="160" y="80"/>
+      <use href="#hex" x="0" y="160"/>
+      <use href="#hex" x="80" y="160"/>
+      <use href="#hex" x="160" y="160"/>
+    </g>
+    <path d="M0 80 80 0M80 160 160 80M0 160 160 0" stroke-opacity="0.45"/>
+    <g fill="#FFFFFF" stroke="none">
+      <circle cx="0" cy="0" r="2"/>
+      <circle cx="80" cy="0" r="2"/>
+      <circle cx="160" cy="0" r="2"/>
+      <circle cx="0" cy="80" r="2"/>
+      <circle cx="80" cy="80" r="2"/>
+      <circle cx="160" cy="80" r="2"/>
+      <circle cx="0" cy="160" r="2"/>
+      <circle cx="80" cy="160" r="2"/>
+      <circle cx="160" cy="160" r="2"/>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,112 @@
+:root {
+  /* ============================================================
+     Official Brand Colors
+     ============================================================ */
+  --color-primary-blue: #2A71CE;   /* Official Logo Blue: logo, aksen Hydrating, gradient */
+  --color-ocean-blue: #0052CC;     /* Ocean Blue: CTA, badge, aksen aktif, aksen Exfoliating */
+  --color-dark: #2E302F;           /* Deep Black: latar gelap & teks utama */
+  --color-surface: #FCF8F5;        /* Light Beige: kanvas terang */
+  --color-white: #FFFFFF;          /* Pure White: kartu produk & kontras tinggi */
+
+  /* ============================================================
+     Tint turunan (hanya color-mix dari token resmi)
+     ============================================================ */
+  --color-blue-tint: color-mix(in srgb, var(--color-primary-blue) 10%, var(--color-surface));
+  --color-blue-soft: color-mix(in srgb, var(--color-primary-blue) 22%, var(--color-white));
+  --color-blue-light: color-mix(in srgb, var(--color-primary-blue) 40%, var(--color-white));
+  --color-ocean-deep: color-mix(in srgb, var(--color-ocean-blue) 85%, var(--color-dark));
+  --color-ocean-tint: color-mix(in srgb, var(--color-ocean-blue) 10%, var(--color-surface));
+  --color-ocean-soft: color-mix(in srgb, var(--color-ocean-blue) 22%, var(--color-white));
+  --color-blue-wash: color-mix(in srgb, var(--color-primary-blue) 14%, transparent);
+  --color-ocean-wash: color-mix(in srgb, var(--color-ocean-blue) 14%, transparent);
+  --color-dark-soft: color-mix(in srgb, var(--color-dark) 82%, var(--color-surface));
+  --color-text-muted: color-mix(in srgb, var(--color-dark) 68%, var(--color-surface));
+  --color-text-muted-dark: color-mix(in srgb, var(--color-white) 72%, var(--color-dark));
+  --color-border: color-mix(in srgb, var(--color-dark) 12%, transparent);
+  --color-border-strong: color-mix(in srgb, var(--color-dark) 22%, transparent);
+  --color-border-dark: color-mix(in srgb, var(--color-white) 18%, transparent);
+  --color-focus-light: var(--color-ocean-blue);
+  --color-focus-dark: var(--color-white);
+
+  /* ============================================================
+     Typography
+     ============================================================ */
+  --font-sans: "Montserrat", system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+  --font-weight-light: 300;
+  --font-weight-regular: 400;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  --text-xs: clamp(0.75rem, 0.72rem + 0.15vw, 0.8125rem);
+  --text-sm: clamp(0.875rem, 0.84rem + 0.2vw, 0.9375rem);
+  --text-base: clamp(1rem, 0.96rem + 0.2vw, 1.0625rem);
+  --text-lg: clamp(1.125rem, 1.05rem + 0.35vw, 1.25rem);
+  --text-xl: clamp(1.25rem, 1.12rem + 0.6vw, 1.5rem);
+  --text-2xl: clamp(1.5rem, 1.28rem + 1vw, 2rem);
+  --text-3xl: clamp(1.875rem, 1.45rem + 1.9vw, 2.75rem);
+  --text-4xl: clamp(2.25rem, 1.5rem + 3.4vw, 4rem);
+  --text-5xl: clamp(2.625rem, 1.5rem + 5vw, 5.25rem);
+
+  --leading-tight: 1.05;
+  --leading-snug: 1.2;
+  --leading-normal: 1.65;
+  --tracking-tight: -0.025em;
+  --tracking-wide: 0.08em;
+  --tracking-wider: 0.18em;
+
+  /* ============================================================
+     Spacing (kelipatan 8px)
+     ============================================================ */
+  --space-1: 0.5rem;   /* 8 */
+  --space-2: 1rem;     /* 16 */
+  --space-3: 1.5rem;   /* 24 */
+  --space-4: 2rem;     /* 32 */
+  --space-5: 2.5rem;   /* 40 */
+  --space-6: 3rem;     /* 48 */
+  --space-7: 4rem;     /* 64 */
+  --space-8: 5rem;     /* 80 */
+  --space-9: 6rem;     /* 96 */
+  --space-10: 8rem;    /* 128 */
+  --section-pad: clamp(4rem, 9vw, 7.5rem);
+
+  /* ============================================================
+     Layout
+     ============================================================ */
+  --container-max: 76rem; /* 1216px */
+  --container-pad: clamp(1.25rem, 4vw, 2.5rem);
+  --nav-height: 4.5rem;
+  --nav-height-mobile: 4rem;
+
+  /* ============================================================
+     Logo
+     ============================================================ */
+  --logo-monogram-height: 1.25rem; /* 20px */
+  --logo-clear-space: calc(9 * var(--logo-monogram-height)); /* 180px */
+  --logo-min-width: 4.375rem;      /* full logo >= 70px */
+  --logo-monogram-min-width: 1.5625rem; /* monogram >= 25px */
+
+  /* ============================================================
+     Radius, Shadow, Motion
+     ============================================================ */
+  --radius-xs: 3px;
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 8px;
+  --radius-xl: 12px;
+
+  --shadow-sm: 0 1px 2px color-mix(in srgb, var(--color-dark) 8%, transparent);
+  --shadow-md: 0 8px 24px color-mix(in srgb, var(--color-dark) 8%, transparent);
+  --shadow-lg: 0 18px 48px color-mix(in srgb, var(--color-dark) 12%, transparent);
+  --shadow-product: 0 24px 60px color-mix(in srgb, var(--color-ocean-blue) 14%, transparent);
+  --shadow-blue: 0 24px 60px color-mix(in srgb, var(--color-ocean-blue) 22%, transparent);
+
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --duration-fast: 160ms;
+  --duration-base: 280ms;
+  --duration-slow: 620ms;
+
+  --z-base: 1;
+  --z-sticky: 100;
+  --z-menu: 200;
+  --z-skip: 300;
+}
