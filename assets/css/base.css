@@ -12,6 +12,7 @@
 }
 
 html {
+  font-size: 100%;
   -webkit-text-size-adjust: 100%;
   text-size-adjust: 100%;
   scroll-behavior: smooth;
@@ -28,7 +29,7 @@ html {
 body {
   min-height: 100vh;
   font-family: var(--font-sans);
-  font-size: var(--text-base);
+  font-size: var(--fs-body);
   font-weight: var(--font-weight-regular);
   line-height: var(--leading-normal);
   color: var(--color-dark);
@@ -201,7 +202,7 @@ p {
   align-items: center;
   gap: var(--space-1);
   margin-bottom: var(--space-2);
-  font-size: var(--text-xs);
+  font-size: var(--fs-eyebrow);
   font-weight: var(--font-weight-semibold);
   letter-spacing: var(--tracking-wider);
   text-transform: uppercase;
@@ -224,13 +225,15 @@ p {
 }
 
 .section__title {
-  font-size: var(--text-3xl);
-  line-height: var(--leading-tight);
+  max-width: 26ch;
+  font-size: var(--fs-h2);
+  line-height: 1.15;
 }
 
 .section__lead {
   margin-top: var(--space-3);
-  font-size: var(--text-lg);
+  max-width: 56ch;
+  font-size: var(--fs-section-lead);
   font-weight: var(--font-weight-regular);
   line-height: var(--leading-normal);
   color: var(--color-text-muted);
