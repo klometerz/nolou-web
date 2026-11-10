@@ -106,7 +106,7 @@ document.addEventListener("DOMContentLoaded", () => {
   /* ============================================================
      Active nav link based on section visibility
      ============================================================ */
-  const observedSections = ["top", "produk", "kandungan", "kenapa-nolou", "tentang", "faq"]
+  const observedSections = ["top", "produk", "bahan-utama", "kenapa-nolou", "tentang", "faq"]
     .map((id) => document.getElementById(id))
     .filter(Boolean);
 
