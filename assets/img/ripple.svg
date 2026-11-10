@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 320" role="img" aria-labelledby="rippleTitle">
+<svg xmlns="http://www.w3.org/2000/svg" width="320" height="320" viewBox="0 0 320 320" role="img" aria-labelledby="rippleTitle">
   <title id="rippleTitle">Ripple air</title>
   <g fill="none" stroke="#FFFFFF">
     <circle cx="160" cy="160" r="34" stroke-opacity="0.6" stroke-width="1.4"/>

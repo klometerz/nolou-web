@@ -46,6 +46,11 @@ video {
   max-width: 100%;
 }
 
+img,
+video {
+  height: auto;
+}
+
 svg {
   height: auto;
 }
@@ -157,7 +162,7 @@ p {
   z-index: -1;
   background-image: url("../img/pattern-blue.svg");
   background-repeat: repeat;
-  background-size: 320px 320px;
+  background-size: 160px 160px;
   opacity: 0.12;
   pointer-events: none;
 }
@@ -176,7 +181,7 @@ p {
   z-index: -1;
   background-image: url("../img/pattern.svg");
   background-repeat: repeat;
-  background-size: 320px 320px;
+  background-size: 160px 160px;
   opacity: 0.12;
   pointer-events: none;
 }

@@ -116,9 +116,9 @@ nolou-web/
 | Background Tentang | `assets/img/tentang-bg.jpg` | Dari `product-real/9.png` (dioptimasi 1600×1600). |
 | Link belanja produk | `index.html` (CTA Produk) | `href="#"` + komentar `TODO: isi link toko`. Kanal penjualan belum ditentukan. |
 | Link belanja footer | `index.html` (footer) | `href="#"` + komentar `TODO: isi link toko`. |
-| Media sosial | `index.html` (footer) | `href="#"` placeholder Instagram/TikTok. **TODO: isi link resmi.** |
-| Email | footer | `hello@nolou.id` — asumsi, mohon konfirmasi. |
-| OG image | `assets/img/og-nolou.svg` | Placeholder SVG 1200×630. Sebaiknya diganti JPG/PNG karena sebagian platform sosial tidak mendukung SVG. |
+| Media sosial | `index.html` (footer) | Disembunyikan sementara; footer hanya menampilkan "Kanal resmi segera diumumkan." + `TODO: isi kanal resmi dari owner`. |
+| Email | footer | Disembunyikan sementara (`hello@nolou.id` dihapus) sampai owner mengonfirmasi. |
+| OG image | `assets/img/og-nolou.jpg` | Sudah JPG 1200×630 (biru + logo putih), dipakai di `og:image` & `twitter:image` dengan URL absolut. |
 | Jawaban FAQ cara pakai | FAQ #4 | Placeholder `Cara pakai lengkap tertera pada kemasan.` + `<!-- COPY: isi dari owner -->` (data ❓ OWNER). |
 | Jawaban FAQ tempat beli | FAQ #5 | Menunggu kanal resmi, ditandai `<!-- COPY: isi dari owner -->`. |
 | Deskripsi kandungan | Section Kandungan | Deskripsi netral & umum, ditandai `<!-- COPY: konfirmasi ke owner -->`. |
@@ -178,6 +178,62 @@ Tidak ada klaim medis tambahan, persentase kandungan, BPOM, halal, dermatologica
 - Hex hanya ada di `:root` (`tokens.css`) dan di dalam file SVG sebagai bagian dari aset brand; tidak ada hex hardcode di CSS komponen.
 - Tidak ada aset/konten dari browieofficial.com; hanya inspirasi struktur single-page.
 - Semua gambar produk memakai `loading="lazy"` kecuali visual hero; `width`/`height` diset untuk mengurangi layout shift.
+- **TODO4 — ukuran visual:** diverifikasi via Chrome headless/CDP pada 360, 390, 746, 1024, 1440, dan 1920 px. Tidak ada horizontal scroll (`overflow` = `[]`), ikon Kandungan 44–56 px, foto hero ≤ 260/380 px, tinggi hero 0,70–1,13× viewport. Detail sebelum/sesudah ada di Bagian 9.
+
+---
+
+## 9. Perbaikan Ukuran Visual (TODO4)
+
+### Phase A — Temuan terukur
+| Area | Selector | Sebelum | Penyebab |
+|---|---|---|---|
+| Hero | `.hero` | padding atas `calc(nav + clamp(3–6rem))`, bawah `clamp(4–8rem)`; hero ±900 px | padding vertikal besar + blok visual dipaksa tinggi |
+| Visual hero | `.hero__visual` | `34rem` × `min-height: clamp(24rem, 60vw, 36rem)` (544×576) | `min-height` besar |
+| Foto hero | `.hero__bottle` | `min(46%, 15rem)` ±240 px, tanpa `max-height` | memakai ukuran asli 1200×1200 |
+| Ripple | `.hero__ripple` | `min(96%, 30rem)` ±480 px, opacity 0.55 | terlalu besar & terang |
+| Badge | `.hero__badge` | `right:0; bottom:8%`, padding `space-2/3` | menutupi produk |
+| Ikon Kandungan | `.ingredient-card__icon` | 4rem (64 px), `img` 2.5rem (40 px) | tepat di batas maksimum |
+| Background Kandungan | `.ingredients::before` | foto `cover`, overlay 86% | poster diperbesar ke seluruh section |
+| Background Tentang | `.about::before` | foto `cover`, overlay 84% | poster diperbesar ke seluruh section |
+| Pattern section | `.section--tint/--dark::before` | tile 320 px | tile terlalu besar |
+| SVG | `icon-*.svg`, `ripple.svg` | hanya `viewBox` | tidak ada `width`/`height` bawaan |
+
+### Phase B–G — Perubahan
+| Item | Sesudah |
+|---|---|
+| Tinggi hero | `min-height: min(88svh, 760px)`; padding `clamp(96px, 12vh, 140px)` / `clamp(48px, 8vh, 96px)` |
+| Background hero | foto `auto 100%` di kanan (tidak zoom `cover`) + overlay gradient; pattern tile 160 px opacity 0.1 via `.hero::after` |
+| Visual hero | `min(100%, clamp(280px, 40vw, 520px))`, tanpa `min-height` |
+| Foto hero | `width/height:auto; max-width:48%; max-height:clamp(220px, 40vh, 380px); object-fit:contain`; mobile ≤260 px |
+| Ripple | `clamp(240px, 40vw, 520px)`, opacity 0.18→0.1, `absolute`, `pointer-events:none` |
+| Badge | `max-width:220px`, padding `space-1/2`, `translateY(calc(100% - 1rem))`, disembunyikan ≤768 px |
+| Strip fakta | 3 kolom di mobile, padding & teks dirapatkan |
+| Ikon Kandungan | `clamp(44px, 4vw, 56px)`, `img` 32 px, `flex:none` |
+| Grid Kandungan | 1 / 2 / 4 kolom (≥640 / ≥1024), gap `clamp(16px,2vw,24px)`, padding kartu `clamp(20px,2vw,28px)` |
+| Background Kandungan & Tentang | foto tile 200 px + overlay 86% / 84% (foto hanya ~14–16% terlihat) |
+| Padding section | Kandungan & Tentang `clamp(64px, 8vw, 112px)` |
+| Signature Tentang | `clamp(28px, 4vw, 48px)` |
+| SVG | `width`/`height` 64 (ikon) & 320 (ripple) ditambahkan |
+| Global | `img, video { height:auto }`; pattern section 160 px |
+| OG image | `assets/img/og-nolou.jpg` 1200×630 |
+| Kontak footer | Instagram/TikTok/email disembunyikan sampai konfirmasi owner |
+| Copy | 5 frasa klaim sensori dilunakkan + komentar `COPY: ... konfirmasi ke owner` |
+
+### Phase F — Verifikasi (Chrome headless/CDP)
+| Viewport | Tinggi hero | Rasio vs viewport | Ikon | Horizontal scroll |
+|---|---|---|---|---|
+| 360×800 | 903 px | 1.13× | 44 px | Tidak |
+| 390×844 | 900 px | 1.07× | 44 px | Tidak |
+| 768×1024 | 910 px | 0.89× | 44 px | Tidak |
+| 800×900 | 873 px | 0.97× | 44 px | Tidak |
+| 1024×768 | 688 px | 0.90× | 44 px | Tidak |
+| 1440×900 | 760 px | 0.84× | 56 px | Tidak |
+| 1920×1080 | 760 px | 0.70× | 56 px | Tidak |
+
+- Foto hero: bbox 160–261 px (sudah termasuk rotasi), tinggi asli ≤ 260/380 px.
+- Ripple: bbox 240–540 px, opacity 0.10–0.18.
+- `overflow` (elemen melebihi lebar viewport) = `[]` di semua ukuran yang diuji (360–1920 px).
+- **Belum dilakukan:** verifikasi visual manual di browser, Lighthouse ulang, dan redeploy Vercel (butuh akses/akun owner).
 
 ---
 
